@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/widgets/controller.dart';
 import 'package:flutter_quill/widgets/editor.dart';
 import 'package:flutter_quill/widgets/toolbar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nulis_app/data/services/firestore_service.dart';
 import 'package:nulis_app/utilities/resources.dart';
 import 'package:nulis_app/utilities/styles.dart';
 
@@ -15,6 +18,7 @@ class AddNotePage extends StatefulWidget {
 
 class _AddNotePageState extends State<AddNotePage> {
   QuillController _quillController = QuillController.basic();
+  FirestoreService _firestoreService = FirestoreService();
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +52,20 @@ class _AddNotePageState extends State<AddNotePage> {
                   height: 28.0,
                   color: NulisColorPalette.primaryColor,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  var json =
+                      jsonEncode(_quillController.document.toDelta().toJson());
+                  print(json);
+                  _firestoreService.addNote(json).then(
+                    (value) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text('Add Note Success'),
+                        ),
+                      );
+                    },
+                  );
+                },
               ),
             ),
           )
@@ -67,6 +84,7 @@ class _AddNotePageState extends State<AddNotePage> {
           ),
           Expanded(
             child: Container(
+              color: Colors.white,
               padding: const EdgeInsets.all(24.0),
               child: QuillEditor.basic(
                 controller: _quillController,

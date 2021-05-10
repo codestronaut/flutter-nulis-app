@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "557400403957",
+    "project_id": "nulis-app",
+    "storage_bucket": "nulis-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557400403957:android:f4c1b9a32cc730551a3abc",
+        "android_client_info": {
+          "package_name": "com.nightlydev.nulis_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557400403957-5138pkpbjentof3sdjms1eich2uojvpr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuM6h9Z-dvQ4XeMnDEyA8HKw3tYO7MHRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557400403957-5138pkpbjentof3sdjms1eich2uojvpr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

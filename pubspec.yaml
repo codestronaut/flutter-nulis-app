@@ -19,6 +19,10 @@ dependencies:
   sizer: ^2.0.13
   flutter_quill: ^1.2.2
 
+  # Firebase Services
+  firebase_core: ^1.1.0
+  cloud_firestore: ^2.0.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
